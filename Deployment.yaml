@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: mydeployment
+   labels:
+      app: suraj
+spec:
+   replicas: 1
+   selector:
+      matchLabels:
+        app: suraj
+   template:
+      metadata:
+         labels:
+            app: suraj
+      spec:
+        containers:
+          - name: mycontainer
+            image: nginx
+            ports:
+               - containerPort: 80
